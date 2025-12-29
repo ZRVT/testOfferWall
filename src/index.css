@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.campaigns {
+  display: grid;
+  /* Changed minmax from 320px to 280px to accommodate smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.campaign {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.campaign-image {
+  width: 100%;
+  aspect-ratio: 1200 / 627;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.campaign-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.campaign p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.install-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 12px;
+}
