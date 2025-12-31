@@ -1,6 +1,7 @@
 import campaigns from './campaigns'
 import { useState } from 'react'
 import clickLogic from './clickLogic'
+import './campaign.css'
 
 const CampaignView = () => {
   const [campaignsList] = useState(campaigns)
