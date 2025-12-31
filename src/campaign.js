@@ -1,29 +1,39 @@
 import campaigns from './campaigns'
+import { useState } from 'react'
+import clickLogic from './clickLogic'
 
 const CampaignView = () => {
+  const [campaignsList] = useState(campaigns)
   return (
     <section className="campaigns">
-      {campaigns.map((campaign) => {
-        const imgUrl =
-          campaign.creative?.creativePacks?.[0]?.creatives?.[0]?.fileUrl
-        const installUrl = campaign.tracking.clickUrl
-        return (
-          <article key={campaign.campaignId} className="campaign">
-            <div className="campaign-image">
-              {imgUrl && <img src={imgUrl} alt={campaign.app.title} />}
+      {campaignsList.map((campaign) => (
+        <article key={campaign.campaignId} className="campaign">
+          <img
+            src={campaign.creative?.creativePacks[0]?.creatives[0]?.fileUrl}
+            alt={campaign.app.title}
+            className="campaign-image"
+          />
+          <section className="campaign-info">
+            <div className="campaign-icon">
+              <img
+                src={campaign.app.thumbnail}
+                alt={campaign.app.title}
+                className="campaign-icon"
+              />
             </div>
-            <h2>{campaign.app.title}</h2>
-            <p>{campaign.app.rating}</p>
-            <p>{campaign.app.storeCategory}</p>
-            <button
-              className="install-button"
-              onClick={() => window.open(installUrl, '_blank')}
-            >
-              Download Now!
-            </button>
-          </article>
-        )
-      })}
+            <div className="campaign-meta">
+              <h2 className="campaign-title">{campaign.app.title}</h2>
+              <p className="campaign-category">{campaign.app.storeCategory}</p>
+            </div>
+          </section>
+          <button
+            className="install-button"
+            onClick={() => clickLogic(campaign.tracking.clickUrl)}
+          >
+            Install
+          </button>
+        </article>
+      ))}
     </section>
   )
 }

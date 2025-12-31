@@ -2,11 +2,13 @@ import React from 'react'
 import ReactDom from 'react-dom/client'
 import './index.css'
 import CampaignView from './campaign'
+// import NewCampaigns from './newCampaigns'
 
 function OfferWall() {
   return (
     <>
       <CampaignView />
+      {/*<NewCampaigns />*/}
     </>
   )
 }
