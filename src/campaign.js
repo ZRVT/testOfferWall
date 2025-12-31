@@ -8,12 +8,14 @@ const CampaignView = () => {
     <section className="campaigns">
       {campaignsList.map((campaign) => (
         <article key={campaign.campaignId} className="campaign">
-          <img
-            src={campaign.creative?.creativePacks[0]?.creatives[0]?.fileUrl}
-            alt={campaign.app.title}
-            className="campaign-image"
-          />
-          <section className="campaign-info">
+          <div>
+            <img
+              src={campaign.creative?.creativePacks[0]?.creatives[0]?.fileUrl}
+              alt={campaign.app.title}
+              className="campaign-image"
+            />
+          </div>
+          <div className="campaign-info">
             <div className="campaign-icon">
               <img
                 src={campaign.app.thumbnail}
@@ -25,7 +27,7 @@ const CampaignView = () => {
               <h2 className="campaign-title">{campaign.app.title}</h2>
               <p className="campaign-category">{campaign.app.storeCategory}</p>
             </div>
-          </section>
+          </div>
           <button
             className="install-button"
             onClick={() => clickLogic(campaign.tracking.clickUrl)}
