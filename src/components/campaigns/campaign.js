@@ -1,7 +1,8 @@
-import campaigns from './campaigns'
+import campaigns from '../../testData'
 import { useState } from 'react'
-import clickLogic from './clickLogic'
 import './campaign.css'
+import moreInfoIcon from '../../images/more-info-icon.svg'
+import DownloadButton from '../downloadButton/DownloadButton'
 
 const CampaignView = () => {
   const [campaignsList] = useState(campaigns)
@@ -24,17 +25,22 @@ const CampaignView = () => {
                 className="campaign-icon"
               />
             </div>
-            <div className="campaign-meta">
+            <div className="campaign-meta-left">
               <h2 className="campaign-title">{campaign.app.title}</h2>
               <p className="campaign-category">{campaign.app.storeCategory}</p>
             </div>
+            <div className="campaign-meta-right">
+              <img
+                className="campaign-details-icon"
+                src={moreInfoIcon}
+                alt="campaign details"
+                onClick={() =>
+                  (window.location.href = `/campaignId/${campaign.campaignId}`)
+                }
+              />
+            </div>
           </div>
-          <button
-            className="install-button"
-            onClick={() => clickLogic(campaign.tracking.clickUrl)}
-          >
-            Install
-          </button>
+          <DownloadButton campaign={campaign} />
         </article>
       ))}
     </section>

@@ -71,15 +71,20 @@ body {
 .campaign-info {
   display: flex;
   align-items: center;
+  width: 100%;
+  padding: 12px 16px;
   gap: clamp(12px, 2vw, 20px);
-  margin-top: 16px;
 }
 
-.campaign-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.campaign-meta-left {
+  flex: 1;
   min-width: 0;
+}
+
+.campaign-meta-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .campaign-category {
@@ -88,17 +93,53 @@ body {
   margin: 0;
 }
 
-.campaign p {
-  margin: 0;
-  font-weight: bold;
+.campaign-details-icon {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
 .install-button {
-  background-color: #007bff;
+  width: 100%;
+  background: linear-gradient(135deg, #5b8cff, #2563eb);
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.install-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.3),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.install-button:hover::after {
+  opacity: 1;
+}
+
+.install-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
+}
+
+.install-button:active {
+  transform: scale(0.97);
 }

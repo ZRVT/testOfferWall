@@ -1,4 +1,4 @@
-import CampaignView from '../components/campaign'
+import CampaignView from '../components/campaigns/campaign'
 
 const CampaignsPage = () => {
   return (
