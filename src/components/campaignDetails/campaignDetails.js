@@ -13,7 +13,7 @@ const campaignDetails = () => {
     return <p>Campaign not found</p>
   }
   return (
-    <section className="campaigns">
+    <section className="campaign-details-container">
       <section key={campaign.campaignId} className="campaign">
         <div>
           <img

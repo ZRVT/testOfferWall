@@ -1,0 +1,21 @@
+/* In this CSS file i will keep all the global brand styles of the 
+project to make it easier to change fonts and other styles easily.
+
+Things that will be added here are as followed: 
+
+- Fonts
+- Brand colors
+- Brand spacing
+- Brand shadows
+- Brand border radius
+- Brand icons
+- Brand buttons
+
+The remainder of the CSS logic is found within the COMPONENTS itself. So in general the project runs based 
+on the following rules. 
+
+app.css -> global styles
+components -> component specific styles
+pages -> page specific styles
+
+*/
