@@ -1,6 +1,7 @@
 import React from 'react'
 import campaigns from '../../testData.js'
 import DownloadButton from '../downloadButton/DownloadButton.js'
+import CampaignEvents from '../campaignEvents/campaignEvents.js'
 import './campaignDetails.css'
 
 const campaignDetails = () => {
@@ -38,13 +39,7 @@ const campaignDetails = () => {
         </div>
         <div>
           <h1>CAMPAIGN DETAILS</h1>
-          <p>{campaign.app.description}</p>
-          <p>
-            lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-            pariatur fugit sit adipisci sunt quia ipsum culpa cum quam illo.
-            Omnis veniam quo dolorum excepturi, quisquam architecto eligendi
-            maxime totam?
-          </p>
+          <CampaignEvents campaign={campaign} />
         </div>
         <DownloadButton campaign={campaign} />
       </section>
