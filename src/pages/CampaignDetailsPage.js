@@ -1,12 +1,11 @@
-import CampaignView from '../components/campaigns/campaign'
+import CampaignDetails from '../components/campaignDetails/campaignDetails'
 
-const CampaignsPage = () => {
+const CampaignDetailsPage = () => {
   return (
     <>
-      <h1>Campaigns</h1>
-      <CampaignView />
+      <CampaignDetails />
     </>
   )
 }
 
-export default CampaignsPage
+export default CampaignDetailsPage

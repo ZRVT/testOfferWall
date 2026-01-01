@@ -35,7 +35,7 @@ const CampaignView = () => {
                 src={moreInfoIcon}
                 alt="campaign details"
                 onClick={() =>
-                  (window.location.href = `/campaignId/${campaign.campaignId}`)
+                  (window.location.href = `/campaign/${campaign.campaignId}`)
                 }
               />
             </div>

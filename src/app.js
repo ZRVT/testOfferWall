@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import CampaignsPage from './pages/CampaignPage'
-import CampaignDetailsPage from './pages/CampaignDetailsPage'
+import CampaignDetailsPage from './pages/campaignDetailsPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<CampaignsPage />} />
-      <Route path="/campaigns/:campaignId" element={<CampaignDetailsPage />} />
+      <Route path="/campaign/:campaignId" element={<CampaignDetailsPage />} />
     </Routes>
   )
 }
