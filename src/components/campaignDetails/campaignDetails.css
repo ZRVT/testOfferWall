@@ -100,3 +100,11 @@ body {
   cursor: pointer;
   margin-right: 1rem;
 }
+
+.campaign-details {
+  max-width: 980px; /* pick your desired width */
+  width: 100%;
+  margin: 0 auto; /* centers the column */
+  padding: 0 24px; /* same left/right padding everywhere */
+  box-sizing: border-box;
+}
