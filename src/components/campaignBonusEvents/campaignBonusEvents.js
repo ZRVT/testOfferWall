@@ -1,3 +1,5 @@
+import './campaignBonusEvents.css'
+
 const CampaignBonusEvents = ({ events }) => {
   const bonusEvents = events
     .filter((event) => Number(event.payoutAmount || 0) > 0)
@@ -6,12 +8,17 @@ const CampaignBonusEvents = ({ events }) => {
 
   return (
     bonusEvents.length > 0 && (
-      <section>
-        <h2>Bonus Missions</h2>
+      <section className="campaign-bonus-events-section">
+        <h2 className="campaign-bonus-events-title">Bonus Missions</h2>
         {bonusEvents.map((event) => (
-          <article key={event.campaignAppEventId}>
-            <h3>{event.eventName}</h3>
-            <p>$ {Number(event.payoutAmount).toFixed(2)}</p>
+          <article
+            className="campaign-bonus-events-article"
+            key={event.campaignAppEventId}
+          >
+            <h3 className="campaign-bonus-events-name">{event.eventName}</h3>
+            <p className="campaign-bonus-events-payout">
+              $ {Number(event.payoutAmount).toFixed(2)}
+            </p>
           </article>
         ))}
       </section>
