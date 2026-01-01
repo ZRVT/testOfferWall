@@ -3,8 +3,10 @@ import { useState } from 'react'
 import './campaign.css'
 import moreInfoIcon from '../../images/more-info-icon.svg'
 import DownloadButton from '../downloadButton/DownloadButton'
+import { useNavigate } from 'react-router-dom'
 
 const CampaignView = () => {
+  const navigate = useNavigate()
   const [campaignsList] = useState(campaigns)
   return (
     <section className="campaigns">
@@ -34,9 +36,7 @@ const CampaignView = () => {
                 className="campaign-details-icon"
                 src={moreInfoIcon}
                 alt="campaign details"
-                onClick={() =>
-                  (window.location.href = `/campaign/${campaign.campaignId}`)
-                }
+                onClick={() => navigate(`/campaign/${campaign.campaignId}`)}
               />
             </div>
           </div>
