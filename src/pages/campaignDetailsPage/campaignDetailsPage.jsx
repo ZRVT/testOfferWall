@@ -1,6 +1,6 @@
 import CampaignDetails from './components/campaignDetails/campaignDetails'
 import { getCampaignFromPath } from './utils/findCampaign'
-import { getCampaigns } from '../../utils/getCampaigns'
+import { getCampaigns } from '../../services/getCampaigns'
 import CampaignEvents from './components/campaignEvents/campaignEvents'
 import CampaignBonusEvents from './components/campaignBonusEvents/campaignBonusEvents'
 import DownloadButton from '../../components/downloadButton/DownloadButton'

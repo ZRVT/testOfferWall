@@ -1,5 +1,5 @@
 import CampaignView from './components/campaigns/campaign'
-import { getCampaigns } from '../../utils/getCampaigns'
+import { getCampaigns } from '../../services/getCampaigns'
 
 const CampaignsPage = () => {
   const campaignsList = getCampaigns()

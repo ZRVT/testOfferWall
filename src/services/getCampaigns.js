@@ -1,4 +1,4 @@
-import campaigns from '../testData'
+import campaigns from './testData'
 export const getCampaigns = () => {
   return campaigns
 }
