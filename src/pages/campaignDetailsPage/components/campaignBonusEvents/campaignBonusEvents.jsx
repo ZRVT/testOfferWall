@@ -1,6 +1,8 @@
 import './campaignBonusEvents.css'
 
-const CampaignBonusEvents = ({ events }) => {
+const CampaignBonusEvents = ({ campaign }) => {
+  const events = campaign?.payoutEvents ?? []
+
   const bonusEvents = events
     .filter((event) => Number(event.payoutAmount || 0) > 0)
     .filter((event) => event.eventName !== 'Install')

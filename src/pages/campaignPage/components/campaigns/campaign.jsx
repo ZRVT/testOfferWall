@@ -1,13 +1,10 @@
-import campaigns from '../../testData'
-import { useState } from 'react'
 import './campaign.css'
 import moreInfoIcon from '../../images/more-info-icon.svg'
-import DownloadButton from '../downloadButton/DownloadButton'
+import DownloadButton from '../../../../components/downloadButton/DownloadButton'
 import { useNavigate } from 'react-router-dom'
 
-const CampaignView = () => {
+const CampaignView = ({ campaignsList }) => {
   const navigate = useNavigate()
-  const [campaignsList] = useState(campaigns)
   return (
     <section className="campaigns">
       {campaignsList.map((campaign) => (

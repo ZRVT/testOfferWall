@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ===== Campaign Card ===== */
+.campaign {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.campaign-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 627;
+  object-fit: cover;
+
+  display: block;
+  border-radius: 10px;
+}
+
+.campaign-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 4px;
+  width: 100%;
+  min-width: 0;
+}
+
+.campaign-icon {
+  width: clamp(52px, 6vw, 80px);
+  height: clamp(52px, 6vw, 80px);
+  flex-shrink: 0;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: block;
+  object-fit: cover;
+}
+
+.campaign-meta-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.campaign-title {
+  margin: 0;
+  font-size: clamp(1.05rem, 2vw, 1.6rem);
+  line-height: 1.2;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.campaign-category {
+  margin: 6px 0 0 0;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  color: #6b6b6b;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.campaign-meta-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.campaign-details-icon {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .campaign {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .campaign-title {
+    white-space: normal;
+  }
+
+  .campaign-category {
+    white-space: normal;
+  }
+}
