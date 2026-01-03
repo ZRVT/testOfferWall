@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { EmailIcon, PasswordIcon } from '../../styles/socialIcons'
 import './emailRegistrations.css'
 
 const EmailRegistrations = () => {
@@ -18,21 +19,18 @@ const EmailRegistrations = () => {
     e.preventDefault()
     console.log(user)
   }
+
+  const showPasswordInput = () => {
+    if (user.email.length > 0) {
+      return true
+    }
+    return false
+  }
   return (
     <form onSubmit={handleSubmit} className="email-form">
       <div className="input-group">
         <span className="input-icon">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
+          <EmailIcon />
         </span>
         <input
           type="email"
@@ -43,7 +41,21 @@ const EmailRegistrations = () => {
           className="styled-input"
         />
       </div>
-      {/* Password hidden for specific design request, or we can add it later if needed */}
+      {showPasswordInput() && (
+        <div className="input-group">
+          <span className="input-icon">
+            <PasswordIcon />
+          </span>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={user.password}
+            onChange={handleChange}
+            className="styled-input"
+          />
+        </div>
+      )}
       <button type="submit" className="start-earning-btn">
         Start earning now
       </button>
