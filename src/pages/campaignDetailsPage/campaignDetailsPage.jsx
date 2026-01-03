@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react'
-import CampaignDetails from './components/campaignDetails/campaignDetails'
+
+import {
+  CampaignDetails,
+  CampaignEvents,
+  CampaignBonusEvents,
+  Loading,
+  Error,
+  NoCampaigns,
+} from './index'
+
 import { getCampaignFromPath } from './utils/findCampaign'
 import { getCampaigns } from '../../services/getCampaigns'
-import CampaignEvents from './components/campaignEvents/campaignEvents'
-import CampaignBonusEvents from './components/campaignBonusEvents/campaignBonusEvents'
 import DownloadButton from '../../components/downloadButton/DownloadButton'
+
 import './styles/campaignDetailsPage.css'
-import Loading from './components/loading/loading'
-import Error from './components/error/error'
-import NoCampaigns from './components/noCampaigns/noCampaigns'
 
 const CampaignDetailsPage = () => {
   const [campaign, setCampaign] = useState(null)

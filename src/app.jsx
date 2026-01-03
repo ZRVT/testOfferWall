@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import CampaignsPage from './pages/campaignPage/CampaignPage'
-import CampaignDetailsPage from './pages/campaignDetailsPage/campaignDetailsPage'
+import { CampaignsPage, CampaignDetailsPage } from './pages'
 
 function App() {
   return (
