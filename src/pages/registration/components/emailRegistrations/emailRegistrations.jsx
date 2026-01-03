@@ -15,9 +15,23 @@ const EmailRegistrations = () => {
     })
   }
 
+  const handleReset = () => {
+    setUser({
+      email: '',
+      password: '',
+    })
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(user)
+    const formData = new FormData(e.currentTarget)
+    // this is used to get the data directly from the form, through FORM API.
+    // Reference FORM API from your course.
+    const newUser = Object.fromEntries(formData)
+    //Need to add something here to handle the data with a function to send it to the back end
+    console.log(newUser)
+    handleReset()
+    e.currentTarget.reset()
   }
 
   // This control when the password input will be shown to the user
