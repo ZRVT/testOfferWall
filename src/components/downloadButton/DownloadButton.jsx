@@ -1,13 +1,15 @@
 import { clickLogic } from '../../utils/index'
+import { normalizeCampaign } from '../../services/getCampaigns/normalizeCampaigns'
 import './DownloadButton.css'
 
 const DownloadButton = ({ campaign }) => {
+  const campaignDetails = normalizeCampaign(campaign)
   return (
     <button
       className="download-button"
-      onClick={() => clickLogic(campaign.tracking.clickUrl)}
+      onClick={() => clickLogic(campaignDetails.tracking.clickUrl)}
     >
-      Download: {campaign.app.title} now!
+      Download: {campaignDetails.app.title} now!
     </button>
   )
 }

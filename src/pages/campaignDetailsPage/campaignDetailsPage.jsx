@@ -5,16 +5,15 @@ import {
   CampaignDetails,
   CampaignEvents,
   CampaignBonusEvents,
-  Loading,
-  Error,
   NoCampaigns,
 } from './components/index'
 // global component imports
-import { DownloadButton } from '../../components'
+import { DownloadButton, Error, Loading } from '../../components'
 
 // utils / services imports
 import { getCampaignFromPath } from './utils/'
 import { getCampaigns } from '../../services'
+import { normalizeCampaign } from '../../services/getCampaigns/normalizeCampaigns'
 
 // styles imports
 import './styles/campaignDetailsPage.css'
@@ -29,7 +28,7 @@ const CampaignDetailsPage = () => {
       try {
         const campaigns = await getCampaigns()
         const { campaign } = getCampaignFromPath(campaigns)
-        setCampaign(campaign ?? null)
+        setCampaign(normalizeCampaign(campaign) ?? null)
       } catch (e) {
         setIsError(true)
       } finally {

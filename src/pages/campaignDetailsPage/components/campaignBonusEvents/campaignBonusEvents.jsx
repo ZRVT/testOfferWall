@@ -1,30 +1,29 @@
 import './campaignBonusEvents.css'
 
 const CampaignBonusEvents = ({ campaign }) => {
-  const events = campaign?.payoutEvents ?? []
+  const events = campaign?.events ?? []
 
   const bonusEvents = events
-    .filter((event) => Number(event.payoutAmount || 0) > 0)
-    .filter((event) => event.eventName !== 'Install')
-    .filter((event) => event.eventCategory === 'Purchase')
+    .filter((e) => e.payout > 0)
+    .filter((e) => e.name !== 'Install')
+    .filter((e) => e.category === 'Purchase')
+
+  if (bonusEvents.length === 0) return null
 
   return (
-    bonusEvents.length > 0 && (
-      <section className="campaign-bonus-events-section">
-        <h2 className="campaign-bonus-events-title">Bonus Missions</h2>
-        {bonusEvents.map((event) => (
-          <article
-            className="campaign-bonus-events-article"
-            key={event.campaignAppEventId}
-          >
-            <h3 className="campaign-bonus-events-name">{event.eventName}</h3>
-            <p className="campaign-bonus-events-payout">
-              $ {Number(event.payoutAmount).toFixed(2)}
-            </p>
-          </article>
-        ))}
-      </section>
-    )
+    <section className="campaign-bonus-events-section">
+      <h2 className="campaign-bonus-events-title">Bonus Missions</h2>
+
+      {bonusEvents.map((event) => (
+        <article className="campaign-bonus-events-article" key={event.id}>
+          <h3 className="campaign-bonus-events-name">{event.name}</h3>
+          <p className="campaign-bonus-events-payout">
+            $ {event.payout.toFixed(2)}
+          </p>
+        </article>
+      ))}
+    </section>
   )
 }
+
 export default CampaignBonusEvents

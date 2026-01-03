@@ -2,16 +2,18 @@ import './campaign.css'
 import moreInfoIcon from '../../images/more-info-icon.svg'
 import DownloadButton from '../../../../components/downloadButton/DownloadButton'
 import { useNavigate } from 'react-router-dom'
+import { normalizeCampaigns } from '../../../../services/getCampaigns/normalizeCampaigns'
 
 const CampaignView = ({ campaignsList }) => {
   const navigate = useNavigate()
+  const normalizedCampaigns = normalizeCampaigns(campaignsList)
   return (
     <section className="campaigns">
-      {campaignsList.map((campaign) => (
-        <article key={campaign.campaignId} className="campaign">
+      {normalizedCampaigns.map((campaign) => (
+        <article key={campaign.id} className="campaign">
           <div>
             <img
-              src={campaign.creative?.creativePacks[0]?.creatives[0]?.fileUrl}
+              src={campaign.creative.fileUrl}
               alt={campaign.app.title}
               className="campaign-image"
             />
@@ -33,7 +35,7 @@ const CampaignView = ({ campaignsList }) => {
                 className="campaign-details-icon"
                 src={moreInfoIcon}
                 alt="campaign details"
-                onClick={() => navigate(`/campaign/${campaign.campaignId}`)}
+                onClick={() => navigate(`/campaign/${campaign.id}`)}
               />
             </div>
           </div>
