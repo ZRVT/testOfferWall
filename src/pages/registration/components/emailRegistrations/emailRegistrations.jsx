@@ -20,6 +20,8 @@ const EmailRegistrations = () => {
     console.log(user)
   }
 
+  // This control when the password input will be shown to the user
+  // Otherwise it will be hidden from the user.
   const showPasswordInput = () => {
     if (user.email.length > 0) {
       return true

@@ -1,13 +1,10 @@
-import { Routes, Route } from 'react-router-dom'
-import { CampaignsPage, CampaignDetailsPage, Registration } from './pages'
+import AppRoutes from './appRoutes'
 
-function App() {
+const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<CampaignsPage />} />
-      <Route path="/campaign/:campaignId" element={<CampaignDetailsPage />} />
-      <Route path="/register" element={<Registration />} />
-    </Routes>
+    <>
+      <AppRoutes />
+    </>
   )
 }
 
