@@ -1,4 +1,5 @@
 import campaigns from './testData'
-export const getCampaigns = () => {
+
+export const getCampaigns = async () => {
   return campaigns
 }
