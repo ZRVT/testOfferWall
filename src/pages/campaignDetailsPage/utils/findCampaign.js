@@ -16,3 +16,5 @@ export const getCampaignFromPath = (campaigns, pathname) => {
   const campaign = findCampaignById(campaigns, campaignId)
   return { campaignId, campaign }
 }
+
+export default getCampaignFromPath

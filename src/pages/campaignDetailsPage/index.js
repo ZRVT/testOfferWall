@@ -1,6 +1,0 @@
-export { default as CampaignDetails } from './components/campaignDetails/campaignDetails'
-export { default as CampaignEvents } from './components/campaignEvents/campaignEvents'
-export { default as CampaignBonusEvents } from './components/campaignBonusEvents/campaignBonusEvents'
-export { default as Loading } from './components/loading/loading'
-export { default as Error } from './components/error/error'
-export { default as NoCampaigns } from './components/noCampaigns/noCampaigns'

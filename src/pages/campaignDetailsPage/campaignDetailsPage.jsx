@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+// Page import components
 import {
   CampaignDetails,
   CampaignEvents,
@@ -7,12 +8,15 @@ import {
   Loading,
   Error,
   NoCampaigns,
-} from './index'
+} from './components/index'
+// global component imports
+import { DownloadButton } from '../../components'
 
-import { getCampaignFromPath } from './utils/findCampaign'
-import { getCampaigns } from '../../services/getCampaigns'
-import DownloadButton from '../../components/downloadButton/DownloadButton'
+// utils / services imports
+import { getCampaignFromPath } from './utils/'
+import { getCampaigns } from '../../services'
 
+// styles imports
 import './styles/campaignDetailsPage.css'
 
 const CampaignDetailsPage = () => {

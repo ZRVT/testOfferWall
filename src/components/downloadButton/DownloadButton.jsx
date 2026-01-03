@@ -1,4 +1,4 @@
-import clickLogic from '../../utils/clickLogic'
+import { clickLogic } from '../../utils/index'
 import './DownloadButton.css'
 
 const DownloadButton = ({ campaign }) => {

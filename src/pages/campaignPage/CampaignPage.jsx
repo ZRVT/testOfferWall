@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getCampaigns } from '../../services/getCampaigns'
-import { CampaignView, Loading, Error, NoCampaigns } from './index'
+import { getCampaigns } from '../../services'
+import { CampaignView, Loading, Error, NoCampaigns } from './components'
 
 const CampaignsPage = () => {
   const [campaignsList, setCampaignsList] = useState([])

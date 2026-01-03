@@ -1,5 +1,5 @@
-import img1 from '../images/EN_RLT_AnimeGirl_1200x627.jpg'
-import img2 from '../images/EN_RLT_3DKissNoText_1200x627.jpg'
+import img1 from '../../images/EN_RLT_AnimeGirl_1200x627.jpg'
+import img2 from '../../images/EN_RLT_3DKissNoText_1200x627.jpg'
 
 const campaigns = [
   {
