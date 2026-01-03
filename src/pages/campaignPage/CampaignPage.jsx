@@ -1,6 +1,9 @@
 import CampaignView from './components/campaigns/campaign'
 import { getCampaigns } from '../../services/getCampaigns'
 import { useEffect, useState } from 'react'
+import Loading from './components/loading/loading'
+import Error from './components/error/error'
+import NoCampaigns from './components/noCampaigns/noCampaigns'
 
 const CampaignsPage = () => {
   const [campaignsList, setCampaignsList] = useState([])
@@ -22,8 +25,9 @@ const CampaignsPage = () => {
     loadCampaigns()
   }, [])
 
-  if (isLoading) return <p>Loading...</p>
-  if (isError) return <p>Error loading campaigns</p>
+  if (isLoading) return <Loading />
+  if (campaignsList.length === 0) return <NoCampaigns />
+  if (isError) return <Error />
 
   return <CampaignView campaignsList={campaignsList} />
 }

@@ -6,6 +6,9 @@ import CampaignEvents from './components/campaignEvents/campaignEvents'
 import CampaignBonusEvents from './components/campaignBonusEvents/campaignBonusEvents'
 import DownloadButton from '../../components/downloadButton/DownloadButton'
 import './styles/campaignDetailsPage.css'
+import Loading from './components/loading/loading'
+import Error from './components/error/error'
+import NoCampaigns from './components/noCampaigns/noCampaigns'
 
 const CampaignDetailsPage = () => {
   const [campaign, setCampaign] = useState(null)
@@ -28,9 +31,9 @@ const CampaignDetailsPage = () => {
     load()
   }, [])
 
-  if (isLoading) return <p>Loading...</p>
-  if (isError) return <p>Error loading campaign</p>
-  if (!campaign) return <p>Campaign not found</p>
+  if (isLoading) return <Loading />
+  if (isError) return <Error />
+  if (!campaign) return <NoCampaigns />
 
   return (
     <section className="campaign-details-container">
