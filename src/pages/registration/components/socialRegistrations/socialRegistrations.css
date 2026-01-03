@@ -1,0 +1,51 @@
+/* Social Buttons */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+
+.social-btn:hover {
+  opacity: 0.9;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  object-fit: contain;
+}
+
+/* Button Variants */
+.google-btn {
+  background-color: #ffffff;
+  border: 1px solid #111827;
+  color: #222;
+}
+
+.facebook-btn {
+  background-color: #4267b2;
+  color: #ffffff;
+}
+
+.apple-btn {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #333;
+}

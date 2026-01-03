@@ -15,7 +15,7 @@ const CampaignEvents = ({ campaign }) => {
       {mainEvents.map((event) => (
         <article className="campaign-events-article" key={event.id}>
           <h3 className="campaign-events-name">{event.name}</h3>
-          <p className="campaign-events-payout">$ {event.payout.toFixed(2)}</p>
+          <p className="campaign-events-payout">$ {event.payout}</p>
         </article>
       ))}
     </section>

@@ -6,7 +6,7 @@ export const normalizeEvent = (event) => {
     appEventId: event.campaignAppEventId ?? null,
     name: event.eventName ?? '',
     category: event.eventCategory ?? '',
-    payout: Number(event.payoutAmount ?? 0),
+    payout: Number(event.payoutAmount.toFixed(2)) ?? 0,
     raw: event,
   }
 }

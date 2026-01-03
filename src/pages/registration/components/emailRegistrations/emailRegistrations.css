@@ -1,0 +1,59 @@
+/* Email Form */
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+  overflow: hidden;
+  border-color: #111827;
+}
+
+.input-group:focus-within {
+  border-color: #3b82f6;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 12px;
+  color: #8890ae;
+}
+
+.styled-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #111827;
+  padding: 14px 16px 14px 0;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+}
+
+.styled-input::placeholder {
+  color: #8890ae;
+}
+
+/* Start Earning Button */
+.start-earning-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
