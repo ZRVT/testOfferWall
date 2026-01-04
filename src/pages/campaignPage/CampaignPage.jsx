@@ -1,33 +1,16 @@
-import { useEffect, useState } from 'react'
-import { getCampaigns } from '../../services'
 import { CampaignView, NoCampaigns } from './components'
 import { Error, Loading } from '../../components'
+import { useCampaigns } from '../../hooks/useCampaigns'
 
+// need to update the to use the hoosk to centralize this logic and make it reusable
 const CampaignsPage = () => {
-  const [campaignsList, setCampaignsList] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [isError, setIsError] = useState(false)
+  const { campaigns, loading, error } = useCampaigns()
 
-  useEffect(() => {
-    const loadCampaigns = async () => {
-      try {
-        const data = await getCampaigns()
-        setCampaignsList(data)
-      } catch (err) {
-        setIsError(true)
-      } finally {
-        setIsLoading(false)
-      }
-    }
+  if (loading) return <Loading />
+  if (campaigns.length === 0) return <NoCampaigns />
+  if (error) return <Error />
 
-    loadCampaigns()
-  }, [])
-
-  if (isLoading) return <Loading />
-  if (campaignsList.length === 0) return <NoCampaigns />
-  if (isError) return <Error />
-
-  return <CampaignView campaignsList={campaignsList} />
+  return <CampaignView campaignsList={campaigns} />
 }
 
 export default CampaignsPage

@@ -18,6 +18,8 @@ import { normalizeCampaign } from '../../services/getCampaigns/normalizeCampaign
 // styles imports
 import './styles/campaignDetailsPage.css'
 
+// need to update the to use the hoosk to centralize this logic and make it reusable
+
 const CampaignDetailsPage = () => {
   const [campaign, setCampaign] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
